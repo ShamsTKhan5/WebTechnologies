@@ -1,0 +1,46 @@
+<html>
+<head>
+    <style>
+
+
+    </style>
+    <script>
+
+        
+        function printmessage()
+        {
+         var a= parseInt(document.getElementById('n1').value);
+         var b=(document.getElementById('msg').value);
+
+        for(i=0;i<=a;i++)
+       {  
+        document.write(b+"\n"+"<br/>"); 
+         
+
+       }
+        
+        
+        }
+
+    </script>
+
+</head>
+<body>
+<form name="frm">
+<div>Enter message and a number to print it n times</div><br/><br/>
+Number: <input type="text"  name="nm" id="n1"  /><br/><br/>
+Message:<input type="text"  name="message" id="msg" /><br/><br/>
+<button type="button" name="button" id="button" value="button" onclick="printmessage()">show message</button>
+
+
+
+
+</form>
+<div id="mydiv">
+
+</div>
+
+</body>
+
+
+</html>

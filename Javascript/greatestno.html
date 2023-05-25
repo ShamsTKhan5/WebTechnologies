@@ -1,0 +1,86 @@
+<html>
+<head>
+    <style>
+        span{
+            color:red;
+        }
+    </style>
+    <script>
+
+        function validatedata(numid,errmsg)
+        {
+           var a=document.getElementById(numid).value;
+           if(a==="" || isNaN(a)){
+                    //display message beside the text box
+                    document.getElementById(errmsg).innerHTML="pls enetr numeric data"
+                    return false
+                }
+                document.getElementById(errmsg).innerHTML="";
+                return true;
+
+        }
+
+        function findgreatest()
+        {
+        var a=parseInt(document.getElementById('n1').value);
+       var b=parseInt(document.getElementById('n2').value);
+       var c=parseInt(document.getElementById('n3').value);
+       if(a>b && a>c)
+       {document.getElementById("result").value=a;}
+       if(b>a && b>c)
+       {document.getElementById("result").value=b;}
+       else if(c>a && c>b)
+       {document.getElementById("result").value=c;}
+
+        }
+
+
+        function validatenumbers()
+        {
+
+            var flag1=validatedata('n1',"err1")
+                var flag2=validatedata('n2','err2')
+                var flag3=validatedata('n3','err3')
+                //alert(flag+" "+flag1)
+                if (flag1 && flag2 && flag3 ){
+                    //alert("data is valid");
+                    findgreatest();
+                }
+
+
+
+
+        }
+
+
+    </script>
+</head>
+<body>
+<form name="frm">
+ Number 1 : <input type="text" name="num1" id="n1">
+<span>*</span>
+<span id="err1"></span>
+<br/><br/>
+Number 2 : <input type="text" name="num2" id="n2">
+<span>*</span>
+<span id="err2"></span>
+<br/><br/>
+Number 3: <input types="text" name="num3" id="n3">
+<span>*</span>
+<span id="err3"></span><br/><br/>
+Greatest: <input type="text" name="result" id="result" disabled><br/><br/>
+<button type="button" name="greatest" id="greatest" value="greatest" onclick="validatenumbers()" >Show Greatest</button>
+
+
+
+
+
+
+</form>
+
+
+
+
+</body>
+
+</html>
