@@ -1,10 +1,30 @@
 <html>
 <head>
     <style>
+        span{
+                color:red;
+            }
 
 
     </style>
     <script>
+
+        function validatenumber()
+        {
+            var a=document.getElementById("n1").value;
+          if(a===" " || isNaN(a))
+          {
+            document.getElementById("errn1").innerHTML="pls enetr numeric data"
+                    return false
+          }
+          else
+           {
+            document.getElementById("errn1").innerHTML="";
+         printmessage();
+        
+           }
+
+        }
 
         
         function printmessage()
@@ -28,15 +48,18 @@
 <body>
 <form name="frm">
 <div>Enter message and a number to print it n times</div><br/><br/>
-Number: <input type="text"  name="nm" id="n1"  /><br/><br/>
+Number: <input type="text"  name="nm" id="n1"  />
+<span >*</span>
+            <span  id="errn1"></span>
+            <br/><br/>
 Message:<input type="text"  name="message" id="msg" /><br/><br/>
-<button type="button" name="button" id="button" value="button" onclick="printmessage()">show message</button>
+<button type="button" name="button" id="button" value="button" onclick="validatenumber()">show message</button>
 
 
 
 
 </form>
-<div id="mydiv">
+<div id="mydiv" >
 
 </div>
 
